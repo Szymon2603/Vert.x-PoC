@@ -1,4 +1,4 @@
-#Vert.x-PoC
+# Vert.x-PoC
 
 ![build][build-status]
 
