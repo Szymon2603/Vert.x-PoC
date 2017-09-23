@@ -35,20 +35,22 @@ ext {
 
 dependencies {
     /* Slf4j */
-    compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jApi}"
-    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: "${slf4jSimple}"
+    compile("org.slf4j:slf4j-api:${slf4jApi}")
+    testCompile("org.slf4j:slf4j-simple:${slf4jSimple}")
 
     /* Vert.x */
-    compile group: 'io.vertx', name: 'vertx-core', version: "${vertxCore}"
-    testCompile group: 'io.vertx', name: 'vertx-unit', version: "${vertxUnit}"
+    compile("io.vertx:vertx-core:${vertxCore}")
+    testCompile("io.vertx:vertx-unit:${vertxUnit}")
 
     /* Apache Commons */
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: "${apacheCommons}"
+    compile("org.apache.commons:commons-lang3:${apacheCommons}")
 
     /* Spock */
-    testCompile group: 'org.spockframework', name: 'spock-core', version: "${spockCore}"
-    testCompile group: 'com.athaydes', name: 'spock-reports', version: "${spockReports}"
+    testCompile("org.spockframework:spock-core:${spockCore}")
+    testCompile("com.athaydes:spock-reports:${spockReports}") {
+        exclude module: 'groovy'
+    }
 
     /* Lombok */
-    compile group: 'org.projectlombok', name: 'lombok', version: "${lombok}"
+    compile("org.projectlombok:lombok:${lombok}")
 }
