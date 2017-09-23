@@ -22,7 +22,33 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    slf4jApi = '1.7.21'
+    slf4jSimple = '1.7.25'
+    vertxCore = '3.4.2'
+    vertxUnit = '3.4.2'
+    apacheCommons = '3.6'
+    spockCore = '1.1-groovy-2.4'
+    spockReports = '1.3.1'
+    lombok = '1.16.18'
+}
+
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.21'
-    testCompile 'junit:junit:4.12'
+    /* Slf4j */
+    compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jApi}"
+    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: "${slf4jSimple}"
+
+    /* Vert.x */
+    compile group: 'io.vertx', name: 'vertx-core', version: "${vertxCore}"
+    testCompile group: 'io.vertx', name: 'vertx-unit', version: "${vertxUnit}"
+
+    /* Apache Commons */
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: "${apacheCommons}"
+
+    /* Spock */
+    testCompile group: 'org.spockframework', name: 'spock-core', version: "${spockCore}"
+    testCompile group: 'com.athaydes', name: 'spock-reports', version: "${spockReports}"
+
+    /* Lombok */
+    compile group: 'org.projectlombok', name: 'lombok', version: "${lombok}"
 }
